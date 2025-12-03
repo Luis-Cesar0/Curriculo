@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currículo | Luis César - Full-Stack Developer</title>
+
+    <style>
+      :root {
+        --page-bg: #020617;
+        --sidebar-bg: #020617;
+        --content-bg: #f9fafb;
+        --card-bg: #ffffff;
+        --accent: #f97316;
+        --accent-strong: #ea580c;
+        --accent-soft: rgba(249, 115, 22, 0.12);
+        --text-main: #0f172a;
+        --text-muted: #6b7280;
+        --border-subtle: #e5e7eb;
+        --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.35);
+        --radius-lg: 20px;
+        --radius-md: 12px;
+        --radius-pill: 999px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        background: radial-gradient(circle at top, #0b1120, #020617 55%);
+        color: var(--text-main);
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      .wrapper {
+        max-width: 1120px;
+        margin: 24px auto;
+        padding: 0 16px 32px;
+      }
+
+      .page {
+        display: flex;
+        background: var(--content-bg);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-soft);
+        overflow: hidden;
+        border: 1px solid rgba(15, 23, 42, 0.5);
+        min-height: 640px;
+      }
+
+      /* Sidebar */
+
+      .sidebar {
+        width: 290px;
+        background: radial-gradient(circle at top, #111827, #020617);
+        color: #e5e7eb;
+        padding: 28px 24px 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 3px solid rgba(248, 250, 252, 0.9);
+        padding: 4px;
+        background: linear-gradient(135deg, #f97316, #fb923c);
+        overflow: hidden;
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.55);
+      }
+
+      .avatar img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .sidebar-name {
+        font-size: 1.35rem;
+        font-weight: 700;
+        text-align: center;
+        letter-spacing: 0.03em;
+      }
+
+      .sidebar-role {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: #9ca3af;
+        text-align: center;
+      }
+
+      .sidebar-sections {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 4px;
+      }
+
+      .sidebar-section-title {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: #9ca3af;
+        margin-bottom: 8px;
+      }
+
+      .contact-list li {
+        font-size: 0.88rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 6px;
+        word-break: break-word;
+      }
+
+      .contact-icon {
+        font-size: 1rem;
+        opacity: 0.9;
+      }
+
+      .contact-link {
+        position: relative;
+      }
+
+      .contact-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0;
+        height: 1px;
+        background: linear-gradient(90deg, #fb923c, #f97316);
+        transition: width 0.2s ease;
+      }
+
+      .contact-link:hover::after {
+        width: 100%;
+      }
+
+      .skills-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .skill {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .skill-header {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.8rem;
+      }
+
+      .skill-name {
+        color: #e5e7eb;
+      }
+
+      .skill-level {
+        color: #9ca3af;
+      }
+
+      .skill-bar {
+        width: 100%;
+        height: 6px;
+        background: rgba(15, 23, 42, 0.85);
+        border-radius: 999px;
+        overflow: hidden;
+      }
+
+      .skill-bar-fill {
+        height: 100%;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #fb923c, #f97316);
+        transform-origin: left;
+        transform: scaleX(0.98);
+      }
+
+      .tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .tag {
+        padding: 4px 10px;
+        border-radius: var(--radius-pill);
+        background: rgba(15, 23, 42, 0.85);
+        font-size: 0.78rem;
+        color: #e5e7eb;
+      }
+
+      /* Main content */
+
+      .content {
+        flex: 1;
+        padding: 28px 32px 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 4px;
+      }
+
+      .title-block h1 {
+        font-size: 1.8rem;
+        letter-spacing: 0.04em;
+      }
+
+      .title-block p {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: flex-end;
+      }
+
+      .chip {
+        font-size: 0.78rem;
+        padding: 5px 11px;
+        border-radius: var(--radius-pill);
+        border: 1px solid rgba(15, 23, 42, 0.06);
+        background: #f3f4f6;
+        color: var(--text-muted);
+      }
+      .chip-strong {
+        background: var(--accent-soft);
+        border-color: rgba(248, 174, 110, 0.6);
+        color: var(--accent-strong);
+      }
+
+      nav {
+        margin-top: 8px;
+      }
+
+      .nav-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        font-size: 0.84rem;
+      }
+
+      .nav-link {
+        padding: 4px 10px;
+        border-radius: var(--radius-pill);
+        color: var(--text-muted);
+        cursor: pointer;
+        background: #f3f4f6;
+        border: 1px solid transparent;
+        transition: all 0.18s ease;
+      }
+
+      .nav-link:hover {
+        border-color: rgba(15, 23, 42, 0.12);
+      }
+
+      .nav-link.active {
+        background: linear-gradient(90deg, #fb923c, #f97316);
+        color: #111827;
+        border-color: transparent;
+        font-weight: 600;
+      }
+
+      .sections {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        margin-top: 10px;
+      }
+
+      section {
+        padding: 14px 18px 16px;
+        background: var(--card-bg);
+        border-radius: var(--radius-md);
+        border: 1px solid var(--border-subtle);
+      }
+
+      .section-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      .section-icon {
+        width: 22px;
+        height: 22px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        color: var(--accent-strong);
+      }
+
+      .section-title {
+        font-size: 0.96rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--text-main);
+      }
+
+      .section-body {
+        font-size: 0.9rem;
+        color: var(--text-main);
+      }
+
+      .section-body p {
+        margin-bottom: 6px;
+        color: var(--text-muted);
+      }
+
+      .section-body strong {
+        color: var(--text-main);
+      }
+
+      .experience-item + .experience-item {
+        margin-top: 10px;
+        padding-top: 8px;
+        border-top: 1px dashed #e5e7eb;
+      }
+
+      .experience-heading {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 4px;
+      }
+
+      .experience-role {
+        font-weight: 600;
+        font-size: 0.93rem;
+      }
+
+      .experience-company {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+      }
+
+      .experience-date {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        white-space: nowrap;
+      }
+
+      .bullet-list {
+        margin-left: 1em;
+        margin-top: 2px;
+      }
+
+      .bullet-list li {
+        margin-bottom: 3px;
+        color: var(--text-muted);
+        position: relative;
+        padding-left: 12px;
+      }
+
+      .bullet-list li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--accent-strong);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .card {
+        padding: 10px 11px;
+        border-radius: 10px;
+        border: 1px solid var(--border-subtle);
+        background: #f9fafb;
+      }
+
+      .card-title {
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
+
+      .card-subtitle {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+      }
+
+      .card-meta {
+        margin-top: 4px;
+        font-size: 0.78rem;
+        color: var(--accent-strong);
+      }
+
+      .projects-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .project {
+        padding: 9px 10px;
+        border-radius: 10px;
+        border: 1px dashed var(--border-subtle);
+        background: #f9fafb;
+      }
+
+      .project-title {
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
+
+      .project-stack {
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        margin-bottom: 3px;
+      }
+
+      .project p {
+        font-size: 0.86rem;
+        color: var(--text-muted);
+      }
+
+      .section-footer {
+        margin-top: 6px;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+      }
+
+      footer {
+        font-size: 0.78rem;
+        color: #9ca3af;
+        text-align: right;
+        margin-top: auto;
+        padding-top: 6px;
+      }
+
+      footer span {
+        color: var(--accent-strong);
+      }
+
+      /* Responsive */
+
+      @media (max-width: 960px) {
+        .page {
+          flex-direction: column;
+        }
+
+        .sidebar {
+          width: 100%;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: flex-start;
+          gap: 18px;
+        }
+
+        .sidebar-main-info {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 6px;
+          flex: 1;
+        }
+
+        .sidebar-sections {
+          margin-top: 0;
+        }
+
+        .title-block h1 {
+          font-size: 1.5rem;
+        }
+
+        .content {
+          padding: 22px 18px 20px;
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .sidebar {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .sidebar-main-info {
+          align-items: center;
+        }
+
+        .topbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .chips {
+          justify-content: flex-start;
+        }
+
+        .experience-heading {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="page">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+          <div class="avatar">
+            <img src="/img/foto-luis-cesar.png" alt="Foto de Luis César" />
+          </div>
+
+          <div class="sidebar-main-info">
+            <h2 class="sidebar-name">Luis César</h2>
+            <p class="sidebar-role">Full-Stack Developer</p>
+          </div>
+
+          <div class="sidebar-sections">
+            <div>
+              <h3 class="sidebar-section-title">Contato</h3>
+              <ul class="contact-list">
+                <li>
+                  <span class="contact-icon">📱</span>
+                  <span class="contact-link">(85) 9 9193-9437</span>
+                </li>
+                <li>
+                  <span class="contact-icon">📧</span>
+                  <a class="contact-link" href="mailto:luiscesarn1@gmail.com"
+                    >luiscesarn1@gmail.com</a
+                  >
+                </li>
+                <li>
+                  <span class="contact-icon">🔗</span>
+                  <a
+                    class="contact-link"
+                    href="https://www.linkedin.com/in/luis-cesar"
+                    target="_blank"
+                    rel="noreferrer"
+                    >linkedin.com/in/luis-cesar</a
+                  >
+                </li>
+                <li>
+                  <span class="contact-icon">💻</span>
+                  <a
+                    class="contact-link"
+                    href="https://github.com/Luis-Cesar0"
+                    target="_blank"
+                    rel="noreferrer"
+                    >github.com/Luis-Cesar0</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="sidebar-section-title">Competências</h3>
+              <div class="skills-list">
+                <div class="skill">
+                  <div class="skill-header">
+                    <span class="skill-name">Git &amp; GitHub</span>
+                    <span class="skill-level">90%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 90%"></div>
+                  </div>
+                </div>
+
+                <div class="skill">
+                  <div class="skill-header">
+                    <span class="skill-name">React</span>
+                    <span class="skill-level">95%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 95%"></div>
+                  </div>
+                </div>
+
+                <div class="skill">
+                  <div class="skill-header">
+                    <span class="skill-name">Next.js</span>
+                    <span class="skill-level">90%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 90%"></div>
+                  </div>
+                </div>
+
+                <div class="skill">
+                  <div class="skill-header">
+                    <span class="skill-name">Angular</span>
+                    <span class="skill-level">70%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 70%"></div>
+                  </div>
+                </div>
+                <div class="skill">
+                  <div class="skill-header">
+                    <span class="skill-name">Nest.js</span>
+                    <span class="skill-level">75%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 75%"></div>
+                  </div>
+                </div>
+
+                <div class="skill">
+                  <div class="skill-header">
+                    <span class="skill-name">Node.js</span>
+                    <span class="skill-level">85%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 85%"></div>
+                  </div>
+                </div>
+
+                <div class="skill">
+                  <div class="skill-header">
+                    <span class="skill-name">TypeScript</span>
+                    <span class="skill-level">90%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 90%"></div>
+                  </div>
+                </div>
+
+                <div class="skill">
+                  <div class="skill-header">
+                    <span class="skill-name">Prisma ORM</span>
+                    <span class="skill-level">80%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 80%"></div>
+                  </div>
+                </div>
+
+                <div class="skill">
+                  <div class="skill-header">
+                    <span class="skill-name">SQL / PostgreSQL</span>
+                    <span class="skill-level">85%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-bar-fill" style="width: 85%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="sidebar-section-title">Idiomas</h3>
+              <ul class="tag-list">
+                <li class="tag">Português (nativo)</li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="content">
+          <div class="topbar">
+            <div class="title-block">
+              <h1>LUIS CÉSAR</h1>
+              <p>
+                Desenvolvedor Full-Stack • React, Next.js, Angular &amp; Node.js
+              </p>
+            </div>
+
+            <div class="chips">
+              <span class="chip chip-strong">Full-Stack</span>
+            </div>
+          </div>
+
+          <nav>
+            <ul class="nav-list">
+              <li>
+                <button class="nav-link active" data-target="#sobre">
+                  Resumo
+                </button>
+              </li>
+              <li>
+                <button class="nav-link" data-target="#experiencia">
+                  Experiência
+                </button>
+              </li>
+              <li>
+                <button class="nav-link" data-target="#educacao">
+                  Educação
+                </button>
+              </li>
+              <li>
+                <button class="nav-link" data-target="#projetos">
+                  Projetos
+                </button>
+              </li>
+              <li>
+                <button class="nav-link" data-target="#destaques">
+                  Destaques
+                </button>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="sections">
+            <!-- SOBRE -->
+            <section id="sobre">
+              <div class="section-header">
+                <div class="section-icon">💼</div>
+                <h2 class="section-title">Resumo profissional</h2>
+              </div>
+              <div class="section-body">
+                <p>
+                  Desenvolvedor Full-Stack formado em Análise e Desenvolvimento
+                  de Sistemas, com experiência em aplicações web modernas, APIs
+                  e interfaces responsivas.
+                </p>
+                <p>
+                  Atuei como instrutor no programa Geração Tech e fui
+                  reconhecido entre os 50 melhores alunos do projeto. Trabalho
+                  com
+                  <strong
+                    >React, Next.js, Angular,Nest.js ,TypeScript, Node.js,
+                    PostgreSQL, Prisma e Docker</strong
+                  >, sempre focando em performance, usabilidade e código limpo.
+                </p>
+              </div>
+            </section>
+
+            <!-- EXPERIÊNCIA -->
+            <section id="experiencia">
+              <div class="section-header">
+                <div class="section-icon">🧑‍💻</div>
+                <h2 class="section-title">Experiência profissional</h2>
+              </div>
+
+              <div class="section-body">
+                <!-- EXPERIÊNCIA PRINCIPAL -->
+                <div class="experience-item">
+                  <div class="experience-heading">
+                    <div>
+                      <div class="experience-role">
+                        Desenvolvedor Full-Stack
+                      </div>
+                      <div class="experience-company">JPTechnologies</div>
+                    </div>
+                    <div class="experience-date">Período atual</div>
+                  </div>
+
+                  <ul class="bullet-list">
+                    <li>
+                      Atuação full-stack em sistemas de alta criticidade para a
+                      área da saúde, incluindo desenvolvimento de novas
+                      funcionalidades, APIs, melhorias de performance e
+                      correções de bugs.
+                    </li>
+                    <li>
+                      Participação em todo o ciclo de vida dos softwares da
+                      empresa, incluindo análise, desenvolvimento, testes,
+                      acompanhamento de deploy e suporte técnico interno.
+                    </li>
+                    <li>
+                      Desenvolvimento dos projetos <strong>Hub-Saúde</strong> e
+                      <strong>PECPro</strong>, utilizados diariamente por
+                      médicos e equipes de atendimento.
+                    </li>
+                  </ul>
+
+                  <div class="section-footer">
+                    Stack: React, Next.js, TypeScript, Node.js, PostgreSQL,
+                    Prisma, Docker.
+                  </div>
+                </div>
+
+                <!-- INSTRUTOR -->
+                <div class="experience-item">
+                  <div class="experience-heading">
+                    <div>
+                      <div class="experience-role">
+                        Instrutor de Desenvolvimento Full-Stack
+                      </div>
+                      <div class="experience-company">
+                        Digital College — Projeto Geração Tech
+                      </div>
+                    </div>
+                    <div class="experience-date">2 meses</div>
+                  </div>
+
+                  <ul class="bullet-list">
+                    <li>
+                      Atuação como instrutor na formação de novos profissionais,
+                      ensinando fundamentos de desenvolvimento web, React,
+                      Node.js e banco de dados.
+                    </li>
+                    <li>
+                      Acompanhamento de projetos, orientações de boas práticas,
+                      Git e fluxo de desenvolvimento.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <!-- EDUCAÇÃO -->
+            <section id="educacao">
+              <div class="section-header">
+                <div class="section-icon">🎓</div>
+                <h2 class="section-title">Percurso acadêmico</h2>
+              </div>
+              <div class="section-body">
+                <div class="grid">
+                  <div class="card">
+                    <div class="card-title">
+                      Análise e Desenvolvimento de Sistemas
+                    </div>
+                    <div class="card-subtitle">Universidade Estácio de Sá</div>
+                    <div class="card-meta">Graduação</div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-title">Formação Front-End</div>
+                    <div class="card-subtitle">
+                      Udemy – HTML, CSS, JavaScript, React, SQL
+                    </div>
+                    <div class="card-meta">Curso livre</div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-title">Programador Web</div>
+                    <div class="card-subtitle">Senac</div>
+                    <div class="card-meta">Curso técnico</div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-title">Desenvolvimento Web</div>
+                    <div class="card-subtitle">Geração Tech – 2024</div>
+                    <div class="card-meta">Formação intensiva</div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-title">Service Desk</div>
+                    <div class="card-subtitle">
+                      Juventude Digital &amp; Lanlink
+                    </div>
+                    <div class="card-meta">Curso profissionalizante</div>
+                  </div>
+                  <div class="card">
+                    <div class="card-title">
+                      Angular - Domine Angular do Zero ao Avançado
+                    </div>
+                    <div class="card-subtitle">rocketseat</div>
+                    <div class="card-meta">Curso livre</div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- PROJETOS -->
+            <section id="projetos">
+              <div class="section-header">
+                <div class="section-icon">🧩</div>
+                <h2 class="section-title">Projetos em destaque</h2>
+              </div>
+
+              <div class="section-body projects-list">
+                <!-- HUB-SAUDE -->
+                <div class="project">
+                  <div class="project-title">Hub-Saúde</div>
+                  <div class="project-stack">
+                    React, Next.js, TypeScript, Node.js, PostgreSQL, Prisma,
+                    Docker
+                  </div>
+
+                  <p>
+                    <strong>Descrição:</strong><br />
+                    Sistema web voltado para a área da saúde, cobrindo toda a
+                    atenção primária. Inclui classificação de risco, atendimento
+                    médico, prescrição de medicamentos e registro de
+                    procedimentos. Possui módulos de histórico do paciente, com
+                    buscas no e-SUS, Policlínica e Regulação, além de controle
+                    de acesso por cargo e geração/impressão de PDFs.
+                  </p>
+
+                  <p>
+                    <strong>Meu papel:</strong><br />
+                    Atuo como desenvolvedor full-stack, participando de todo o
+                    ciclo de vida do software:
+                  </p>
+                  <ul class="bullet-list">
+                    <li>desenvolvimento das telas e das APIs;</li>
+                    <li>
+                      participação em reuniões para definição de novas
+                      funcionalidades e módulos;
+                    </li>
+                    <li>auxílio no processo de deploy da aplicação;</li>
+                    <li>correção de bugs em produção.</li>
+                  </ul>
+
+                  <p><strong>Principais entregas:</strong></p>
+                  <ul class="bullet-list">
+                    <li>
+                      Melhoria de performance das telas principais, deixando a
+                      navegação mais rápida para médicos e enfermeiros.
+                    </li>
+                    <li>
+                      Desenvolvimento de novos módulos alinhados à rotina da
+                      atenção primária.
+                    </li>
+                    <li>
+                      Painel de chamadas em tempo real para organização da fila
+                      de pacientes (WebSockets).
+                    </li>
+                    <li>
+                      Resolução de bugs em produção, aumentando estabilidade e
+                      confiabilidade.
+                    </li>
+                    <li>Integração do Hub-Saúde com o PECPro.</li>
+                  </ul>
+
+                  <p>
+                    <strong>Uso:</strong><br />
+                    Sistema utilizado diariamente por médicos e enfermeiros na
+                    rotina de atendimento.
+                  </p>
+                </div>
+
+                <!-- PECPRO -->
+                <div class="project">
+                  <div class="project-title">
+                    PECPro – Extensão do Google Chrome
+                  </div>
+                  <div class="project-stack">
+                    TypeScript, Node.js, PostgreSQL
+                  </div>
+
+                  <p>
+                    <strong>Descrição:</strong><br />
+                    Extensão integrada ao e-SUS que adiciona funcionalidades
+                    como alertas personalizados, questionários, mensagens
+                    agendadas e visualização rápida do histórico do paciente
+                    (e-SUS + Hub-Saúde) diretamente no navegador.
+                  </p>
+
+                  <p>
+                    <strong>Meu papel:</strong><br />
+                    Quando entrei na empresa, o projeto estava há cerca de 3
+                    anos sem manutenção. Fiquei responsável por reconstruir o
+                    produto, refatorar os arquivos existentes e evoluir a
+                    extensão, que anteriormente oferecia apenas alertas.
+                  </p>
+
+                  <ul class="bullet-list">
+                    <li>manutenção e evolução da arquitetura;</li>
+                    <li>desenvolvimento de novas funcionalidades;</li>
+                    <li>correção de bugs;</li>
+                    <li>
+                      criação de ambiente de testes para facilitar
+                      desenvolvimento e estabilidade.
+                    </li>
+                  </ul>
+
+                  <p><strong>Principais entregas:</strong></p>
+                  <ul class="bullet-list">
+                    <li>
+                      Questionário de pré-natal, automatizando um processo antes
+                      manual.
+                    </li>
+                    <li>
+                      Modal exibindo histórico do paciente do Hub-Saúde sem
+                      troca de sistemas.
+                    </li>
+                    <li>
+                      Refatoração completa da base de código, tornando-a estável
+                      e fácil de manter.
+                    </li>
+                  </ul>
+
+                  <p>
+                    <strong>Uso:</strong><br />
+                    Utilizada diariamente por médicos e enfermeiros, integrada
+                    ao e-SUS dentro do navegador.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <!-- DESTAQUES -->
+            <section id="destaques">
+              <div class="section-header">
+                <div class="section-icon">🏅</div>
+                <h2 class="section-title">Destaques</h2>
+              </div>
+
+              <div class="section-body">
+                <p>
+                  • Reconhecido entre os
+                  <strong>Top 50 alunos do programa Geração Tech</strong>.<br />
+                  • Experiência prática em ambiente real de produção em sistemas
+                  críticos para a área da saúde.<br />
+                  • Atuação como desenvolvedor e também como instrutor,
+                  acostumado a trabalhar em equipe e compartilhar conhecimento.
+                </p>
+              </div>
+            </section>
+          </div>
+
+          <footer>
+            Feito em <span>HTML</span>, <span>CSS</span> e
+            <span>JavaScript</span>.
+          </footer>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      navLinks.forEach((btn) => {
+        btn.addEventListener("click", (event) => {
+          event.preventDefault();
+
+          const targetId = btn.getAttribute("data-target");
+          const targetEl = document.querySelector(targetId);
+
+          if (targetEl) {
+            targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+
+          navLinks.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
